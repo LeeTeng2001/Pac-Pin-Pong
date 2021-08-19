@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/GUI/AudioManager.cs" type="Script" id=1]
+[ext_resource path="res://Audio/Game Audio for 3RetroIn1 Level 1.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/Game Audio for 3RetroIn1 Level 2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/Game Audio for 3RetroIn1 Level 3.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/pacman collect.wav" type="AudioStream" id=5]
+
+[node name="AudioManager" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 1 )
+
+[node name="PointPitchTimer" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="MainMusicLevel1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Music"
+
+[node name="MainMusicLevel2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "Music"
+
+[node name="MainMusicLevel3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Music"
+
+[node name="CollectPoint" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "FX"
+
+[connection signal="timeout" from="PointPitchTimer" to="." method="_on_PointPitchTimer_timeout"]
+[connection signal="finished" from="MainMusicLevel1" to="." method="_on_MainMusicLevel_finished"]
+[connection signal="finished" from="MainMusicLevel2" to="." method="_on_MainMusicLevel_finished"]
+[connection signal="finished" from="MainMusicLevel3" to="." method="_on_MainMusicLevel_finished"]

@@ -1,0 +1,11 @@
+mono_crash.*
+.idea
+.DS_Store
+*/Export/*
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+.mono/
+data_*/

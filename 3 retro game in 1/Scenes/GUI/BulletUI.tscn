@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/Bullet.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/GUI/BtmCounterUI.cs" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ScaleHeart"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Icon:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1.6245, 1.41421, 2.46229 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.823529, 0.52549, 0.380392, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="BulletUI" type="HBoxContainer"]
+margin_right = 103.0
+margin_bottom = 64.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+typeUI = 1
+
+[node name="Count" type="Label" parent="."]
+margin_top = 19.0
+margin_right = 100.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+text = "  12"
+align = 2
+
+[node name="Tween" type="Tween" parent="Count"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 104.0
+margin_right = 119.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 15, 0 )
+
+[node name="EmissionPosition" type="Position2D" parent="."]
+position = Vector2( 132.397, 36.9318 )
+
+[node name="Icon" type="TextureRect" parent="."]
+margin_left = 123.0
+margin_right = 147.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 12, 32 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ScaleHeart = SubResource( 2 )

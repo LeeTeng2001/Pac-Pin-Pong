@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/World BG.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/PacmanMap1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/World.cs" type="Script" id=3]
+[ext_resource path="res://Scenes/PinballMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Pacman.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/InvaderSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/GUI/UIPanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerStat.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/FX/AudioManager.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GUI/GameStartUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/FX/WorldCanvasFX.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 1.1
+glow_bloom = 0.02
+glow_blend_mode = 1
+glow_hdr_threshold = 1.3
+glow_bicubic_upscale = true
+
+[node name="World" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="PlayerStat1" parent="." instance=ExtResource( 8 )]
+
+[node name="PlayerStat2" parent="." instance=ExtResource( 8 )]
+playerType = 1
+
+[node name="BG Collection" type="Node2D" parent="."]
+
+[node name="BG Middle" type="Sprite" parent="BG Collection"]
+position = Vector2( 960, 540 )
+scale = Vector2( 1, 1.2 )
+texture = ExtResource( 1 )
+
+[node name="BG Main Layer" type="Sprite" parent="BG Collection"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BG Border" type="Sprite" parent="BG Collection"]
+position = Vector2( -128, -108 )
+scale = Vector2( 3, 1.2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 1080 )
+
+[node name="BG Border2" type="Sprite" parent="BG Collection"]
+position = Vector2( 1856, -108 )
+scale = Vector2( 3, 1.2 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 1080 )
+
+[node name="PinballMap" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64, 192 )
+
+[node name="PinballMap2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1664, 192 )
+playerType = 1
+
+[node name="InvaderSpawner1" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, 0 )
+
+[node name="InvaderSpawner2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1600, 0 )
+
+[node name="PacmanMap1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 384, 128 )
+
+[node name="Pacman" parent="PacmanMap1" instance=ExtResource( 5 )]
+pause_mode = 1
+position = Vector2( 0, 64 )
+
+[node name="Camera2D" type="Camera2D" parent="PacmanMap1/Pacman"]
+position = Vector2( -384, -192 )
+current = true
+limit_left = -50
+limit_top = -25
+limit_right = 1950
+limit_bottom = 1100
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 2.0
+
+[node name="UIPanel" parent="." instance=ExtResource( 7 )]
+margin_right = 1920.0
+margin_bottom = 1050.0
+
+[node name="AudioManager" parent="." instance=ExtResource( 9 )]
+
+[node name="GameStartUI" parent="." instance=ExtResource( 10 )]
+
+[node name="WorldCanvasFX" parent="." instance=ExtResource( 11 )]
+
+[connection signal="BulletCountChange" from="PlayerStat1" to="UIPanel" method="_on_PlayerStat_BulletCountChange"]
+[connection signal="HealthChange" from="PlayerStat1" to="UIPanel" method="_on_PlayerStat_HealthChange"]
+[connection signal="PlayerDied" from="PlayerStat1" to="." method="_on_PlayerStat_PlayerDied"]
+[connection signal="BulletCountChange" from="PlayerStat2" to="UIPanel" method="_on_PlayerStat_BulletCountChange"]
+[connection signal="HealthChange" from="PlayerStat2" to="UIPanel" method="_on_PlayerStat_HealthChange"]
+[connection signal="PlayerDied" from="PlayerStat2" to="." method="_on_PlayerStat_PlayerDied"]
+[connection signal="PlayerMoved" from="PinballMap" to="PacmanMap1" method="_on_PinballMap_PlayerMoved"]
+[connection signal="PlayerMoved" from="PinballMap2" to="PacmanMap1" method="_on_PinballMap_PlayerMoved"]
+[connection signal="TimeLimitReached" from="PacmanMap1" to="PacmanMap1/Pacman" method="_linger_time_out"]
+[connection signal="BallLeave" from="PacmanMap1/Pacman" to="PinballMap" method="_on_Pacman_BallLeave"]
+[connection signal="BallLeave" from="PacmanMap1/Pacman" to="PinballMap2" method="_on_Pacman_BallLeave"]
+[connection signal="BallLeave" from="PacmanMap1/Pacman" to="PacmanMap1" method="_on_Pacman_BallLeave"]
+[connection signal="CollectedPoint" from="PacmanMap1/Pacman" to="AudioManager" method="_on_Pacman_CollectedPoint"]
+[connection signal="PacmanDieSignal" from="PacmanMap1/Pacman" to="PacmanMap1" method="_on_Pacman_PacmanDieSignal"]
+[connection signal="StartTimeLimitCountdown" from="PacmanMap1/Pacman" to="PacmanMap1" method="_on_Pacman_StartTimeLimitCountdown"]
+[connection signal="LevelIncreased" from="AudioManager" to="." method="_on_AudioManager_LevelIncreased"]
+[connection signal="LevelIncreased" from="AudioManager" to="WorldCanvasFX" method="_on_AudioManager_LevelIncreased"]

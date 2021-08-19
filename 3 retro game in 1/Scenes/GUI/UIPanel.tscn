@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/GUI/BulletUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/GUI/HealthUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/GUI/UIPanel.cs" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 3 )
+
+[node name="UIPanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -96.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtmContainer" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -64.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="HBoxContainer" parent="BtmContainer"]
+margin_left = 471.0
+margin_right = 806.0
+margin_bottom = 64.0
+
+[node name="HealthUI" parent="BtmContainer/Player1" instance=ExtResource( 2 )]
+margin_right = 184.0
+margin_bottom = 64.0
+
+[node name="BulletUI" parent="BtmContainer/Player1" instance=ExtResource( 1 )]
+margin_left = 188.0
+margin_right = 335.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BtmContainer"]
+margin_left = 810.0
+margin_right = 1110.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 300, 0 )
+
+[node name="Player2" type="HBoxContainer" parent="BtmContainer"]
+margin_left = 1114.0
+margin_right = 1449.0
+margin_bottom = 64.0
+
+[node name="BulletUI" parent="BtmContainer/Player2" instance=ExtResource( 1 )]
+margin_right = 147.0
+
+[node name="HealthUI" parent="BtmContainer/Player2" instance=ExtResource( 2 )]
+margin_left = 151.0
+margin_right = 335.0
+margin_bottom = 64.0
+
+[node name="TopContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+margin_top = 30.0
+margin_bottom = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BattleLabel" type="Label" parent="TopContainer"]
+margin_right = 1920.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 1 )
+text = "Battle!"
+align = 1

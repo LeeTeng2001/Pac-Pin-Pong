@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/collision hit.wav-2ab099aa2f0ccbc400622762b8459b4e.sample"
+
+[deps]
+
+source_file="res://Audio/collision hit.wav"
+dest_files=[ "res://.import/collision hit.wav-2ab099aa2f0ccbc400622762b8459b4e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
