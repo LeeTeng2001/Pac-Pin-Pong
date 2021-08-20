@@ -27,7 +27,7 @@
   <p align="center">
     A fun local multiplayer game comprising Pacman, Pinball and Space Invader into one 
     <br />
-    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong"><strong>Lean about the game mechanic »</strong></a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong"><strong>Learn about the game »</strong></a>
     <br />
     <br />
     <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong">View Demo</a>
@@ -71,49 +71,57 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![game play](https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/main/readme%20source/gameplay%20demo%201.gif)
-
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`LeeTeng2001`, `Pac-Pin-Pong`, `twitter_handle`, `leeteng2001@gmail.com`, `Pac-Pin-Pong`, `project_description`
+![](readme%20source/game%20title.png)
 
 
-### Built With
+Recently I've been dabbling in Godot for quite a bit, it's a very capable engine for 2D and I really like static language that's why I've chosen C# as my project language, there aren't a lot of quality C# Godot demo out there that's why I've inclined to make one to contribute back to Godot.
 
-* []()
-* []()
-* []()
+My main inspiration came from [this video by Alpha Beta Gamer](https://www.youtube.com/watch?v=8TOGBZp8_Ao&list=WL&index=9&t=4s), I think it's very clever to combine multiple childhood retro games into one that's why I wanted to challenge myself to recreate the same game.
 
+**You can do whatever you want with this project.**
+ Most of the assets and audio is created by me, when it's not, it's under cc0 license (like [kenney explosion fx](https://kenney.nl/) and some sound effect from freesound.org)
+
+
+
+
+### Built With ❤️ Using
+
+* [Godot Mono](https://godotengine.org/)
+* [Affinity Designer](https://affinity.serif.com/en-us/designer/)
+* [Ableton](https://www.ableton.com/en/)
+
+
+### Disclamer
+
+I'm not affiliated with any of the companies above I just think that they're great and they provide really valuable tools for me that's why I wanted to give them credit
+
+## Gameplay Demo
+
+<p align="center">
+  <img src="https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/main/readme%20source/gameplay%20demo%201.gif" />
+</p>
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Getting Started (Building & Exploring)
 
-If you're interested in building 
+### Building
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
+Just clone this repo and use [Godot Mono](https://godotengine.org/) to open the project folder "3 retro game in 1" and you'll be good to go. Check out their website if you don't how to setup mono environment
    ```sh
    git clone https://github.com/LeeTeng2001/Pac-Pin-Pong.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
 
+### Exploring
+'3 retro game in 1/Scenes/World.tscn' is the main entrance for the game, you can see for example how player stats are stored, shader effects, ghost effects, timer example and more!
+
+Happy exploring!
+
+## Getting Started (Playing)
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+### Control Explained
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
@@ -122,10 +130,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ROADMAP -->
-## Roadmap
+## Additional ideas for the game
 
-See the [open issues](https://github.com/LeeTeng2001/Pac-Pin-Pong/issues) for a list of proposed features (and known issues).
-
+* Camera shaking effect
+* More sound effects
+* Setting menu for adjusting game volume
+* Main menu for picking difficulty
+* AI opponent
 
 
 <!-- CONTRIBUTING -->
@@ -147,11 +158,10 @@ Contributions are what make the open source community such an amazing place to b
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
-
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - leeteng2001@gmail.com
+Email: leeteng2001@sjtu.edu.cn
 
 Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/LeeTeng2001/Pac-Pin-Pong)
 
@@ -160,10 +170,11 @@ Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/L
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements & Credits
 
-* []()
-* []()
-* []()
-
+* [Alpha Beta Gamer for the game idea](https://www.youtube.com/watch?v=8TOGBZp8_Ao&list=WL&index=9&t=4s)
+* [Kenney for explosion sprites](https://kenney.nl/)
+* [xyezawr for explosion sprites](https://xyezawr.itch.io/free-pixel-effects-pack-4-explosions)
+* [ryansnook explosion sound](https://freesound.org/people/ryansnook/sounds/110115/)
+* [V-ktor explosion sound](https://freesound.org/people/V-ktor/sounds/435416/)
 
 
 
