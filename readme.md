@@ -71,7 +71,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![game play demo]("readme source/gameplay%20demo%201.gif")
+![game play](https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/main/readme%20source/gameplay%20demo%201.gif)
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
