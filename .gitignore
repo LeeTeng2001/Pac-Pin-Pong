@@ -1,11 +1,48 @@
-mono_crash.*
-.idea
-.DS_Store
-*/Export/*
-
-# Godot-specific ignores
+# Godot-specific ignores -------------------------------------------------------
 .import/
 export.cfg
 export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
 .mono/
 data_*/
+mono_crash.*
+
+# Jetbrain
+.idea
+
+# Macos ------------------------------------------------------------------------
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# My Export Folder ------------------------------------------------------------------
+*/Export/*
+
+

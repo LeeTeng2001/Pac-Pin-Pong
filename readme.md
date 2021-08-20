@@ -1,15 +1,3 @@
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** repo_name, twitter_handle, email, project_title, project_description
--->
-
 
 
 <!-- PROJECT SHIELDS -->
@@ -20,35 +8,33 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
+
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
+<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/LeeTeng2001/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong">
+    <img src="./readme source/game icon.png" alt="Main Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">project_title</h3>
+  <h3 align="center">Pac-Pin-Pong</h3>
 
   <p align="center">
-    project_description
+    A fun local multiplayer game comprising Pacman, Pinball and Space Invader into one 
     <br />
-    <a href="https://github.com/LeeTeng2001/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong"><strong>Lean about the game mechanic »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/LeeTeng2001/repo_name">View Demo</a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong">View Demo</a>
     ·
-    <a href="https://github.com/LeeTeng2001/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong/issues">Report Bug</a>
     ·
-    <a href="https://github.com/LeeTeng2001/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong/issues">Request Feature</a>
   </p>
 </p>
 
@@ -85,11 +71,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+![game play demo]("readme source/gameplay%20demo%201.gif")
 
 Here's a blank template to get started:
 **To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`LeeTeng2001`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
+`LeeTeng2001`, `Pac-Pin-Pong`, `twitter_handle`, `leeteng2001@gmail.com`, `Pac-Pin-Pong`, `project_description`
 
 
 ### Built With
@@ -117,7 +103,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/LeeTeng2001/repo_name.git
+   git clone https://github.com/LeeTeng2001/Pac-Pin-Pong.git
    ```
 2. Install NPM packages
    ```sh
@@ -138,7 +124,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/LeeTeng2001/repo_name/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/LeeTeng2001/Pac-Pin-Pong/issues) for a list of proposed features (and known issues).
 
 
 
@@ -165,9 +151,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - leeteng2001@gmail.com
 
-Project Link: [https://github.com/LeeTeng2001/repo_name](https://github.com/LeeTeng2001/repo_name)
+Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/LeeTeng2001/Pac-Pin-Pong)
 
 
 
@@ -185,14 +171,14 @@ Project Link: [https://github.com/LeeTeng2001/repo_name](https://github.com/LeeT
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/LeeTeng2001/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/LeeTeng2001/repo_name/graphs/contributors
+[contributors-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/LeeTeng2001/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/LeeTeng2001/repo_name/network/members
+[forks-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/network/members
 [stars-shield]: https://img.shields.io/github/stars/LeeTeng2001/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/LeeTeng2001/repo_name/stargazers
+[stars-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/stargazers
 [issues-shield]: https://img.shields.io/github/issues/LeeTeng2001/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/LeeTeng2001/repo_name/issues
+[issues-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/issues
 [license-shield]: https://img.shields.io/github/license/LeeTeng2001/repo.svg?style=for-the-badge
-[license-url]: https://github.com/LeeTeng2001/repo_name/blob/master/LICENSE.txt
+[license-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/LeeTeng2001
