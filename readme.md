@@ -215,8 +215,9 @@ Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/L
 * [Alpha Beta Gamer for the game idea](https://www.youtube.com/watch?v=8TOGBZp8_Ao&list=WL&index=9&t=4s)
 * [Kenney for explosion sprites](https://kenney.nl/)
 * [xyezawr for explosion sprites](https://xyezawr.itch.io/free-pixel-effects-pack-4-explosions)
-* [ryansnook explosion sound](https://freesound.org/people/ryansnook/sounds/110115/)
-* [V-ktor explosion sound](https://freesound.org/people/V-ktor/sounds/435416/)
+* [ryansnook for explosion sound](https://freesound.org/people/ryansnook/sounds/110115/)
+* [V-ktor for explosion sound](https://freesound.org/people/V-ktor/sounds/435416/)
+* [othneildrew for this amazing readme template](https://github.com/othneildrew/Best-README-Template)
 
 
 
