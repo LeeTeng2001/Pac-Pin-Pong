@@ -9,7 +9,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-[![Stargazers][stars-shield]][stars-url]
+<!-- [![Stargazers][stars-shield]][stars-url] -->
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 <!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
@@ -90,10 +90,9 @@ My main inspiration came from [this video by Alpha Beta Gamer](https://www.youtu
 * [Affinity Designer](https://affinity.serif.com/en-us/designer/)
 * [Ableton](https://www.ableton.com/en/)
 
+_**Disclamer**: I'm not affiliated with any of the companies I just think that they're great and they provide really valuable tools for me that's why I wanted to give them credit_
 
-### Disclamer
 
-I'm not affiliated with any of the companies above I just think that they're great and they provide really valuable tools for me that's why I wanted to give them credit
 
 ## Gameplay Demo
 
@@ -107,39 +106,73 @@ I'm not affiliated with any of the companies above I just think that they're gre
 
 ### Building
 
-Just clone this repo and use [Godot Mono](https://godotengine.org/) to open the project folder "3 retro game in 1" and you'll be good to go. Check out their website if you don't how to setup mono environment
+Just clone this repo and use [Godot Mono](https://godotengine.org/) to open the project folder "3 retro game in 1" and you'll be good to go. Check out Godot website if you don't how to setup mono environment
    ```sh
    git clone https://github.com/LeeTeng2001/Pac-Pin-Pong.git
    ```
 
 ### Exploring
-'3 retro game in 1/Scenes/World.tscn' is the main entrance for the game, you can see for example how player stats are stored, shader effects, ghost effects, timer example and more!
+'3 retro game in 1/Scenes/World.tscn' is the main entrance for the game, you can see examples like how player stats are stored, shader effects, ghost effects, power up and more!
 
 Happy exploring!
 
 ## Getting Started (Playing)
+### Download Instruction for MacOS
+Because of the codesign issue on Mac, I recommend you to download the whole project and build it locally, otherwise if you know your way around you could download the latest release and code sign in order to play the game.
 
+1. Visit [release page](https://github.com/LeeTeng2001/Pac-Pin-Pong/releases) and downlaod the latest release (for example **Pac-Pin-Pong-v1.0.0-macos.dmg**)
+2. Open the dmg file and drag the **Pac-Pin-Pong** to your machine, preferably to **/Applications** folder
+3. Open the Terminal app and insert the following command, you can drag the application to the terminal to auto fill the **\<path to the application\>**
+   ```bash
+   xattr -rd com.apple.quarantine <path to the application>
+   sudo codesign --force --deep --sign - <path to the application>
+   ```
+4. Double click the application to run
+
+### Download Instruction for Window
+1. Visit [release page](https://github.com/LeeTeng2001/Pac-Pin-Pong/releases) and downlaod the latest release (for example **Pac-Pin-Pong-v1.0.0-window.zip**)
+2. Extract the zip file, double click the exe file to play
 
 <!-- USAGE EXAMPLES -->
-### Control Explained
+### Game Explained
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+I will refer left hand side player as player 1 and vice versa
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Each player have two shoot buttons, one of them shoot the Space Invader bullet, the other shoot the Pacman towards the grid. In addition, there's also two set of movement key for each player, one of them controls the Pacman during his journey in the grid and the other controls the pinball pad movement.
 
+The goal is to survive longer than the other player, every time you failed to catch the Pacman, run out of action time, colliding with ghost without a buff, colliding with bullets and other will deplete your health. You can also collect the point inside the Pacman grid to restore your health and bullets, successfully catch Pacman from other player also restore healths and bullets. At the same time, the Pacman points will make your Pacman moves faster which means it'll become really hard to control as time progress.
 
+Everytime the game difficulty increase, the music will become more intense and there's a VFX indicating so along with a Pacman map refresh. There's also powerup inside the grid that will either kill a random ghost, make them invisible, make you strong enough to eat them or a random effect.
 
-<!-- ROADMAP -->
-## Additional ideas for the game
+It's best to experience it yourself! I have a blast playing this game with my friend.
+
+### Controls
+<dl>
+  <dt>Player 1</dt>
+  <dd><b>W, A, S, D</b> to move the pinball pad</dd>
+  <dd><b>C, F, V, B</b> to move the Pacman</dd>
+  <dd><b>E</b> to shoot pinball bullet</dd>
+  <dd><b>Space</b> to shoot Pacman</dd>
+
+  <dt>Player 2</dt>
+  <dd><b>Up, Down, Left, Right</b> to move the pinball pad</dd>
+  <dd><b>K, M, ,, .</b> to move the Pacman</dd>
+  <dd><b>'</b> to shoot pinball bullet</dd>
+  <dd><b>Enter</b> to shoot Pacman</dd>
+</dl>
+
+_If you want you could always download the source file to change the controls internally, maybe I'll add a control panel in the upcoming release_
+
+## Other ideas for the game
 
 * Camera shaking effect
 * More sound effects
 * Setting menu for adjusting game volume
 * Main menu for picking difficulty
 * AI opponent
+* Configure current difficulty
 
 
-<!-- CONTRIBUTING -->
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -181,15 +214,9 @@ Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/L
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/LeeTeng2001/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/LeeTeng2001/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/network/members
 [stars-shield]: https://img.shields.io/github/stars/LeeTeng2001/repo.svg?style=for-the-badge
 [stars-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/stargazers
 [issues-shield]: https://img.shields.io/github/issues/LeeTeng2001/repo.svg?style=for-the-badge
 [issues-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/issues
 [license-shield]: https://img.shields.io/github/license/LeeTeng2001/repo.svg?style=for-the-badge
-[license-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/LeeTeng2001
+[license-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/main/LICENSE
