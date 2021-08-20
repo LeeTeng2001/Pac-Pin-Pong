@@ -27,10 +27,10 @@
   <p align="center">
     A fun local multiplayer game comprising Pacman, Pinball and Space Invader into one 
     <br />
-    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong"><strong>Learn about the game »</strong></a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong#about-the-project"><strong>Learn about the game »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong">View Demo</a>
+    <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong#gameplay-demo">View Demo</a>
     ·
     <a href="https://github.com/LeeTeng2001/Pac-Pin-Pong/issues">Report Bug</a>
     ·
@@ -47,22 +47,31 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#built-with-%EF%B8%8F-using">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#gameplay-demo">Gameplay Demo</a></li>
+    <li>
+      <a href="#getting-started-building--exploring">Getting Started (Building & Exploring)</a>
+      <ul>
+        <li><a href="#building">Building</a></li>
+        <li><a href="#exploring">Exploring</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started-playing">Getting Started (Playing)</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#download-instruction-for-macos">Download for MacOS</a></li>
+        <li><a href="#download-instruction-for-window">Download for Window</a></li>
+        <li><a href="#game-explained">Game Explained</a></li>
+        <li><a href="#controls">Controls</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#other-ideas-for-the-game">Other ideas for the game</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#acknowledgements--credits">Acknowledgements & Credits</a></li>
   </ol>
 </details>
 
@@ -122,10 +131,10 @@ Because of the codesign issue on Mac, I recommend you to download the whole proj
 
 1. Visit [release page](https://github.com/LeeTeng2001/Pac-Pin-Pong/releases) and downlaod the latest release (for example **Pac-Pin-Pong-v1.0.0-macos.dmg**)
 2. Open the dmg file and drag the **Pac-Pin-Pong** to your machine, preferably to **/Applications** folder
-3. Open the Terminal app and insert the following command, you can drag the application to the terminal to auto fill the **\<path to the application\>**
+3. Open the Terminal app and insert the following command, you can drag the application to the terminal to auto fill the **\<path-to-the-application\>**
    ```bash
-   xattr -rd com.apple.quarantine <path to the application>
-   sudo codesign --force --deep --sign - <path to the application>
+   xattr -rd com.apple.quarantine <path-to-the-application>
+   sudo codesign --force --deep --sign - <path-to-the-application>
    ```
 4. Double click the application to run
 
@@ -161,7 +170,7 @@ It's best to experience it yourself! I have a blast playing this game with my fr
   <dd><b>Enter</b> to shoot Pacman</dd>
 </dl>
 
-_If you want you could always download the source file to change the controls internally, maybe I'll add a control panel in the upcoming release_
+_If you find the control awkward you could always download the source file to change the controls internally, maybe I'll add a control panel in the upcoming release_
 
 ## Other ideas for the game
 
@@ -175,7 +184,7 @@ _If you want you could always download the source file to change the controls in
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are welcomed.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
