@@ -63,6 +63,7 @@
       <ul>
         <li><a href="#download-instruction-for-macos">Download for MacOS</a></li>
         <li><a href="#download-instruction-for-window">Download for Window</a></li>
+        <li><a href="#play-on-web">Play On Web</a></li>
         <li><a href="#game-explained">Game Explained</a></li>
         <li><a href="#controls">Controls</a></li>
       </ul>
@@ -141,6 +142,10 @@ Because of the codesign issue on Mac, I recommend you to download the whole proj
 ### Download Instruction for Window
 1. Visit [release page](https://github.com/LeeTeng2001/Pac-Pin-Pong/releases) and downlaod the latest release (for example **Pac-Pin-Pong-v1.0.0-window.zip**)
 2. Extract the zip file, double click the exe file to play
+
+### Play on Web
+1. Visit [itch io](https://lunafreya2001.itch.io/pac-pin-pong) and hit play
+
 
 <!-- USAGE EXAMPLES -->
 ### Game Explained
