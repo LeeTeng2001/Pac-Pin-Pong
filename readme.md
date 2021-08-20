@@ -9,10 +9,10 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+[![Contributors][contributors-shield]][contributors-url]
 <!-- [![Stargazers][stars-shield]][stars-url] -->
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
-<!-- [![LinkedIn][linkedin-shield]][linkedin-url] -->
 
 
 <!-- PROJECT LOGO -->
@@ -223,9 +223,11 @@ Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/L
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[stars-shield]: https://img.shields.io/github/stars/LeeTeng2001/repo.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/LeeTeng2001/Pac-Pin-Pong.svg?style=for-the-badge
+[contributors-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/LeeTeng2001/Pac-Pin-Pong.svg?style=for-the-badge
 [stars-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/stargazers
-[issues-shield]: https://img.shields.io/github/issues/LeeTeng2001/repo.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/LeeTeng2001/Pac-Pin-Pong.svg?style=for-the-badge
 [issues-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/issues
-[license-shield]: https://img.shields.io/github/license/LeeTeng2001/repo.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/LeeTeng2001/Pac-Pin-Pong.svg?style=for-the-badge
 [license-url]: https://github.com/LeeTeng2001/Pac-Pin-Pong/blob/main/LICENSE
