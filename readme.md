@@ -179,9 +179,9 @@ _If you find the control awkward you could always download the source file to ch
 
 ## Other ideas for the game
 
-* Camera shaking effect
-* Configure current difficulty
-* More sound effects
+* Camera shaking effect ✅
+* Configure current difficulty ✅
+* More sound effects ✅
 * Setting menu for adjusting game volume
 * Main menu for picking difficulty
 * AI opponent
