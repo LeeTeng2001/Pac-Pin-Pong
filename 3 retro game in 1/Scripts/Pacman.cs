@@ -48,6 +48,9 @@ public class Pacman : Area2D
         // Setup
         playerStrPrefix = curPlayer == World.Player.Left ? "player1" : "player2";
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true); // cause start in pinball
+        
+        // Reset static stat when restart scene
+        InGridMaxTime = 6f; PinballMaxTime = 5f;
     }
 
     public override void _Process(float delta)
@@ -264,6 +267,7 @@ public class Pacman : Area2D
             if (curState == PacmanState.Still) return;
 
             // check if it's same person or another person
+            // TODO: higher speed deals more damage
             var boundPlayer = node.GetParent<PinballMap>().playerType; 
             if (boundPlayer == curPlayer)  // if it's the same person deal more damage
             {

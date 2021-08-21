@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/GUI/GameStartUI.cs" type="Script" id=3]
 [ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=1]
 size = 65
 font_data = ExtResource( 4 )
 
@@ -226,7 +226,7 @@ __meta__ = {
 margin_top = 612.69
 margin_right = 1920.0
 margin_bottom = 682.69
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.329661, 1.10113, 0.8, 0.423285 )
 text = " Welcome!"
 align = 1

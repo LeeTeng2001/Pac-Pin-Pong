@@ -23,7 +23,7 @@ public class GameStartUI : Control
         if (Input.IsActionJustPressed("gamestartTrigger"))
         {
             if (endGame) RestartGame();  // Restart Game
-            HideOverlay();
+            else HideOverlay();
         }
     }
 

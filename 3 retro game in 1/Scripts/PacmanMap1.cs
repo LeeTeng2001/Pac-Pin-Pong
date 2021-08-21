@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 public class PacmanMap1 : Node2D
@@ -187,6 +188,9 @@ public class PacmanMap1 : Node2D
         timeBarSprite = GetNode<AnimatedSprite>("PacmanTimeSprite");
         deathParticles = new List<Particles2D>();
         
+        // WHEN USER RESET THEIR PROGRESS
+        Ghost.contactDamage = 30; Ghost.movSpeed = 210; Ghost.totalGhost = 0;
+
         GeneratePointsAndPU();
         GenerateEnemy(2);
 
@@ -329,5 +333,10 @@ public class PacmanMap1 : Node2D
     private void _on_AddDeadTimer_timeout()
     {
         GenerateEnemy(2);
+    }
+
+    private void _on_PlayerStat_PlayerDied(World.Player playerDied)
+    {
+        SetProcess(false);  // Stop countdown timer when one of the player died
     }
 }
