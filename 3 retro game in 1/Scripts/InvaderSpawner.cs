@@ -28,15 +28,15 @@ public class InvaderSpawner : Node2D
 
     public void IncreaseDifficulty()
     {
-        GD.Print("Invader Difficulty increase!");
-        enemyHealth += 10;
-        enemyMovDownSpeed += 25f;
-        enemyMovHoriSpeed += 30f;
-        shootingRate += 0.25f;
-        bulletSpeed += 40f;
+        // GD.Print("Invader Difficulty increase!");
+        enemyHealth += 5;
+        enemyMovDownSpeed += 20f;
+        enemyMovHoriSpeed += 15f;
+        shootingRate += 0.15f;
+        bulletSpeed += 50f;
         bulletDamage += 5;
 
-        spawnTimeInterval = spawnTimeInterval > 0.6f ? spawnTimeInterval - 0.5f : 0.6f;
+        spawnTimeInterval = spawnTimeInterval > 0.6f ? spawnTimeInterval - 0.4f : 0.6f;
     }
 
     private void _on_SpawnTimer_timeout()

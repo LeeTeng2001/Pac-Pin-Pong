@@ -7,16 +7,12 @@ public class GameStartUI : Control
     private Label infoLabel;
     private bool endGame;
     private GlobalGameState gameState = GlobalGameState.ShowMenu;
-    private Camera2D mainCam;
-    private int configLimitTop, configLimitLeft;
+    private MainCamera mainCam;
     
     public override void _Ready()
     {
         infoLabel = GetNode<Label>("InfoLabel");
-        mainCam = GetParent().GetNode<Camera2D>("PacmanMap1/Pacman/Camera2D");
-        configLimitLeft = mainCam.LimitLeft;
-        configLimitTop = mainCam.LimitTop;
-        mainCam.Offset = new Vector2(-configLimitLeft, -configLimitTop);
+        mainCam = GetParent().GetNode<MainCamera>("PacmanMap1/Pacman/MainCamera");
     }
 
     // Debug
@@ -39,10 +35,9 @@ public class GameStartUI : Control
         var tween = GetNode<Tween>("TweenWhole");
         tween.InterpolateProperty(this, "modulate:a", 0f, 1f, 0.5f);
         tween.Start();
-        var tween1 = new Tween();
-        AddChild(tween1);
-        tween1.InterpolateProperty(mainCam, "offset", mainCam.Offset, new Vector2(-configLimitLeft, -configLimitTop), .5f);
-        tween1.Start();
+        
+        mainCam.ChangeCameraFollow(true);  // turn back to fixed camera
+        
         GetNode<AnimationPlayer>("Transition").Play();
         gameState = GlobalGameState.ShowMenu;
         endGame = true;
@@ -50,10 +45,7 @@ public class GameStartUI : Control
 
     private void HideOverlay()
     {
-        var tween1 = new Tween();
-        AddChild(tween1);
-        tween1.InterpolateProperty(mainCam, "offset", mainCam.Offset, Vector2.Zero, .5f);
-        tween1.Start();
+        mainCam.ChangeCameraFollow(false);  // turn camera to follow mode
         
         gameState = GlobalGameState.InGame;
         var tween = GetNode<Tween>("TweenWhole");

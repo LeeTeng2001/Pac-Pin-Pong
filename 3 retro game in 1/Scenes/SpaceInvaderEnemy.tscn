@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Space Invader Enemies.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/SpaceInvaderEnemy.cs" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/FX/tank_explosion4.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Space HealthBar BG.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Space HealthBar Progress Green.png" type="Texture" id=8]
+[ext_resource path="res://Audio/495541__matrixxx__retro-death.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/explosion.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30.6584, 27.3425 )
@@ -43,6 +45,7 @@ hframes = 2
 frame = 1
 
 [node name="BulletTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="ExplosionAnimation" type="AnimatedSprite" parent="."]
 visible = false
@@ -65,6 +68,19 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="ProgressBG"]
 
+[node name="ShootingFX" type="AudioStreamPlayer" parent="."]
+
+[node name="DeadAudioFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -18.0
+bus = "FX"
+
+[node name="CollisionHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -14.0
+bus = "FX"
+
 [connection signal="area_entered" from="." to="." method="_on_SpaceInvaderEnemy_area_entered"]
 [connection signal="timeout" from="BulletTimer" to="." method="_on_BulletTimer_timeout"]
 [connection signal="animation_finished" from="ExplosionAnimation" to="." method="_on_ExplosionAnimation_animation_finished"]
+[connection signal="finished" from="DeadAudioFX" to="." method="_on_DeadAudioFX_finished"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/495541__matrixxx__retro-death.wav-1131341143db9d8cd337b7a71b5a0aab.sample"
+
+[deps]
+
+source_file="res://Audio/495541__matrixxx__retro-death.wav"
+dest_files=[ "res://.import/495541__matrixxx__retro-death.wav-1131341143db9d8cd337b7a71b5a0aab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

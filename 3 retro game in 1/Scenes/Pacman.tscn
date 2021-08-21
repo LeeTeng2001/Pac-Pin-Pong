@@ -76,7 +76,7 @@ position = Vector2( 32, 32 )
 modulate = Color( 1.1, 1.1, 1.1, 1 )
 frames = SubResource( 2 )
 animation = "Player1 Move"
-frame = 3
+frame = 1
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="RotationPivot"]

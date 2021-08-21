@@ -3,7 +3,7 @@ using System;
 
 public class PacmanPoint : Area2D
 {
-    public int healthRestorePoint = 3, bulletRestorePoint = 1, speedRestorePoint = 3;
+    public int healthRestorePoint = 2, bulletRestorePoint = 1, speedRestorePoint = 2;
     private bool _isSpawn = true;
 
     public override void _Ready()

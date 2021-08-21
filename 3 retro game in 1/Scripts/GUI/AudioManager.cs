@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using Godot.Collections;
 
 public class AudioManager : Node2D
@@ -9,20 +8,23 @@ public class AudioManager : Node2D
     
     private static readonly Dictionary<int, int> LevelLoopCount = new Dictionary<int, int>
     {
-        {1 , 5},
-        {2 , 8},
-        {3 , 1000000},  // The last one need to be very long
+        {1 , 4},
+        {2 , 5},
+        {3 , 5},
+        {4 , 6},
+        {5 , 100000},  // The last one need to be very long
     };
 
     private int _curLoopCount = 0;
     private float _pitchScale = 1;
-    private AudioStreamPlayer _pitchPlayer;
+    private AudioStreamPlayer _pitchPlayerSingle, _pitchPlayerPowerUp;
     private Timer _pitchTimer;
 
     public override void _Ready()
     {
         GetNode<AudioStreamPlayer>("MainMusicLevel1").Play();
-        _pitchPlayer = GetNode<AudioStreamPlayer>("CollectPoint");
+        _pitchPlayerSingle = GetNode<AudioStreamPlayer>("CollectPoint");
+        _pitchPlayerPowerUp = GetNode<AudioStreamPlayer>("CollectPointPowerup");
         _pitchTimer = GetNode<Timer>("PointPitchTimer");
     }
 
@@ -35,11 +37,12 @@ public class AudioManager : Node2D
         }
         
         _curLoopCount++;
-        if (_curLoopCount == LevelLoopCount[levelCount])
+        if (_curLoopCount == LevelLoopCount[levelCount])  // go to next level
         {
             levelCount++;
             _curLoopCount = 0;
             EmitSignal(nameof(LevelIncreased));
+            GetNode<AudioStreamPlayer>("MainMusicTransition").Play();  // Transition music
         }
         
         GetNode<AudioStreamPlayer>("MainMusicLevel" + levelCount.ToString()).Play();
@@ -48,13 +51,22 @@ public class AudioManager : Node2D
     private void _on_PointPitchTimer_timeout()
     {
         _pitchScale = 1;
+        GetNode<AudioStreamPlayer>("CollectPointFinish").Play();
     }
 
-    private void _on_Pacman_CollectedPoint()
+    private void _on_Pacman_CollectedPoint(bool isPowerUp)
     {
         _pitchScale += 0.02f;
-        _pitchPlayer.PitchScale = _pitchScale;
-        _pitchPlayer.Play();
+        if (isPowerUp)
+        {
+            _pitchPlayerPowerUp.PitchScale = _pitchScale;
+            _pitchPlayerPowerUp.Play();
+        }
+        else
+        {
+            _pitchPlayerSingle.PitchScale = _pitchScale;
+            _pitchPlayerSingle.Play();
+        }
         _pitchTimer.Start();
     }
 }

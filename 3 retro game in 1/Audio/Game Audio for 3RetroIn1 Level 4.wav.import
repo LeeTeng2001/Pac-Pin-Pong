@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Game Audio for 3RetroIn1 Level 4.wav-587939dbf100801ec2e311bf4bbb89e2.sample"
+
+[deps]
+
+source_file="res://Audio/Game Audio for 3RetroIn1 Level 4.wav"
+dest_files=[ "res://.import/Game Audio for 3RetroIn1 Level 4.wav-587939dbf100801ec2e311bf4bbb89e2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

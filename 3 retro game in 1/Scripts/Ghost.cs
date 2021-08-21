@@ -17,7 +17,7 @@ public class Ghost : Area2D
         { GridDirect.Right, new Vector2(1, 0) },
     };
 
-    public static int contactDamage = 15, movSpeed = 235, totalGhost = 0;
+    public static int contactDamage = 30, movSpeed = 210, totalGhost = 0;
     public GhostState enemyState;
     
     private GridDirect curDirection;
@@ -90,6 +90,7 @@ public class Ghost : Area2D
     {
         if (enemyState == GhostState.Dead) return;  // Guard
 
+        GetNode<AudioStreamPlayer>("Dead").Play();
         totalGhost--;
         if (totalGhost <= 0) EmitSignal(nameof(GhostAllDead)); // tell world to respawn
         
@@ -165,8 +166,8 @@ public class Ghost : Area2D
     
     public static void IncreaseDifficulty()
     {
-        GD.Print("Ghost difficulty increase");
-        contactDamage += 5;
-        movSpeed += 25;
+        // GD.Print("Ghost difficulty increase");
+        contactDamage += 20;
+        movSpeed += 20;
     }
 }

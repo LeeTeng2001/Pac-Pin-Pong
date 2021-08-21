@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/World BG.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/PacmanMap1.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/FX/AudioManager.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/GUI/GameStartUI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/FX/WorldCanvasFX.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/MainCamera.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -79,16 +80,7 @@ position = Vector2( 384, 128 )
 pause_mode = 1
 position = Vector2( 0, 64 )
 
-[node name="Camera2D" type="Camera2D" parent="PacmanMap1/Pacman"]
-position = Vector2( -384, -192 )
-current = true
-limit_left = -50
-limit_top = -25
-limit_right = 1950
-limit_bottom = 1100
-limit_smoothed = true
-smoothing_enabled = true
-smoothing_speed = 2.0
+[node name="MainCamera" parent="PacmanMap1/Pacman" instance=ExtResource( 12 )]
 
 [node name="UIPanel" parent="." instance=ExtResource( 7 )]
 margin_right = 1920.0
@@ -106,7 +98,9 @@ margin_bottom = 1050.0
 [connection signal="BulletCountChange" from="PlayerStat2" to="UIPanel" method="_on_PlayerStat_BulletCountChange"]
 [connection signal="HealthChange" from="PlayerStat2" to="UIPanel" method="_on_PlayerStat_HealthChange"]
 [connection signal="PlayerDied" from="PlayerStat2" to="." method="_on_PlayerStat_PlayerDied"]
+[connection signal="PlayerGotHit" from="PinballMap" to="PacmanMap1/Pacman/MainCamera" method="_on_PinballMap_PlayerGotHit"]
 [connection signal="PlayerMoved" from="PinballMap" to="PacmanMap1" method="_on_PinballMap_PlayerMoved"]
+[connection signal="PlayerGotHit" from="PinballMap2" to="PacmanMap1/Pacman/MainCamera" method="_on_PinballMap_PlayerGotHit"]
 [connection signal="PlayerMoved" from="PinballMap2" to="PacmanMap1" method="_on_PinballMap_PlayerMoved"]
 [connection signal="TimeLimitReached" from="PacmanMap1" to="PacmanMap1/Pacman" method="_linger_time_out"]
 [connection signal="BallLeave" from="PacmanMap1/Pacman" to="PinballMap" method="_on_Pacman_BallLeave"]
@@ -114,6 +108,7 @@ margin_bottom = 1050.0
 [connection signal="BallLeave" from="PacmanMap1/Pacman" to="PacmanMap1" method="_on_Pacman_BallLeave"]
 [connection signal="CollectedPoint" from="PacmanMap1/Pacman" to="AudioManager" method="_on_Pacman_CollectedPoint"]
 [connection signal="PacmanDieSignal" from="PacmanMap1/Pacman" to="PacmanMap1" method="_on_Pacman_PacmanDieSignal"]
+[connection signal="PacmanDieSignal" from="PacmanMap1/Pacman" to="PacmanMap1/Pacman/MainCamera" method="_on_Pacman_PacmanDieSignal"]
 [connection signal="StartTimeLimitCountdown" from="PacmanMap1/Pacman" to="PacmanMap1" method="_on_Pacman_StartTimeLimitCountdown"]
 [connection signal="LevelIncreased" from="AudioManager" to="." method="_on_AudioManager_LevelIncreased"]
 [connection signal="LevelIncreased" from="AudioManager" to="WorldCanvasFX" method="_on_AudioManager_LevelIncreased"]

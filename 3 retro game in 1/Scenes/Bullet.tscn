@@ -37,7 +37,7 @@
 [ext_resource path="res://Assets/FX/xyezawr.itch.io-free-pixel-effects-pack-4-explosions/1_22.png" type="Texture" id=35]
 [ext_resource path="res://Assets/FX/xyezawr.itch.io-free-pixel-effects-pack-4-explosions/1_21.png" type="Texture" id=36]
 [ext_resource path="res://Assets/FX/xyezawr.itch.io-free-pixel-effects-pack-4-explosions/1_0.png" type="Texture" id=37]
-[ext_resource path="res://Audio/435416__v-ktor__explosion13.wav" type="AudioStream" id=38]
+[ext_resource path="res://Audio/explosion.wav" type="AudioStream" id=38]
 [ext_resource path="res://Audio/shoot.wav" type="AudioStream" id=39]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -46,11 +46,6 @@ height = 22.0945
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": false,
-"name": "player1 bullet",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": false,
 "name": "enemy bullet",
@@ -59,6 +54,11 @@ animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
 "name": "player2 bullet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "player1 bullet",
 "speed": 5.0
 } ]
 
@@ -91,12 +91,12 @@ animation = "explosion"
 
 [node name="CollisionHit" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 38 )
-volume_db = -16.101
+volume_db = -14.0
 bus = "FX"
 
 [node name="BulletShot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 39 )
-volume_db = -6.092
+volume_db = -8.0
 bus = "FX"
 
 [connection signal="area_entered" from="." to="." method="_on_Bullet_area_entered"]

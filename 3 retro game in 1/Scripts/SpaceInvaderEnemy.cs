@@ -64,7 +64,7 @@ public class SpaceInvaderEnemy : Area2D
 
     private void _on_BulletTimer_timeout()
     {
-        if (explosionSprite.Playing) return;
+        if (explosionSprite.Playing) return;  // Dead
         bulletTimer.Start(1 / shootingRate);
         
         var bulletInstance = BulletScene.Instance<Bullet>();
@@ -95,12 +95,19 @@ public class SpaceInvaderEnemy : Area2D
 
     public void DieAnimation()
     {
+        GetNode<AudioStreamPlayer>("DeadAudioFX").Play();
+        GetNode<AudioStreamPlayer>("CollisionHit").Play();
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
         explosionSprite.Visible = true;
         explosionSprite.Play();
     }
 
     private void _on_ExplosionAnimation_animation_finished()
+    {
+        Modulate = new Color(1, 1, 1, 0);
+    }
+
+    private void _on_DeadAudioFX_finished()
     {
         QueueFree();
     }

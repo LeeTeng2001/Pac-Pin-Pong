@@ -7,6 +7,7 @@ public class PinballMap : Node2D
     [Export] public int maxLocalY = 64 * 11, maxLocalX = 64 * 3;
 
     [Signal] public delegate void PlayerMoved(Vector2 playerGlobPos, Pacman player);
+    [Signal] public delegate void PlayerGotHit();
     
     public Pacman curPacmanStill;
     private bool _hasStillBall = false;
@@ -113,6 +114,7 @@ public class PinballMap : Node2D
 
     private void FlashEffect()
     {
+        EmitSignal(nameof(PlayerGotHit));
         flashTween.InterpolateMethod(this, nameof(SetFlashShader), 0f, 0.8f, 0.3f);
         flashTween.Start();
         flashTimer.Start(0.35f);

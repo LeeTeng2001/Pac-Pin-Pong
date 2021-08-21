@@ -180,11 +180,11 @@ _If you find the control awkward you could always download the source file to ch
 ## Other ideas for the game
 
 * Camera shaking effect
+* Configure current difficulty
 * More sound effects
 * Setting menu for adjusting game volume
 * Main menu for picking difficulty
 * AI opponent
-* Configure current difficulty
 
 
 ## Contributing
@@ -220,8 +220,8 @@ Project Link: [https://github.com/LeeTeng2001/Pac-Pin-Pong](https://github.com/L
 * [Alpha Beta Gamer for the game idea](https://www.youtube.com/watch?v=8TOGBZp8_Ao&list=WL&index=9&t=4s)
 * [Kenney for explosion sprites](https://kenney.nl/)
 * [xyezawr for explosion sprites](https://xyezawr.itch.io/free-pixel-effects-pack-4-explosions)
-* [ryansnook for explosion sound](https://freesound.org/people/ryansnook/sounds/110115/)
 * [V-ktor for explosion sound](https://freesound.org/people/V-ktor/sounds/435416/)
+* [MATRIXXX_ for retro dead fx](https://freesound.org/people/MATRIXXX_/sounds/495541/)
 * [othneildrew for this amazing readme template](https://github.com/othneildrew/Best-README-Template)
 
 

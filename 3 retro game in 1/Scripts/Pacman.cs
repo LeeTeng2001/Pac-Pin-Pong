@@ -14,10 +14,10 @@ public class Pacman : Area2D
     };
 
     public World.Player curPlayer = World.Player.Left;
-    public static float InGridMaxTime = 8f, PinballMaxTime = 5f;
+    public static float InGridMaxTime = 6f, PinballMaxTime = 5f;
     
     [Signal] public delegate void BallLeave();
-    [Signal] public delegate void CollectedPoint();
+    [Signal] public delegate void CollectedPoint(bool isPowerUp);
     [Signal] public delegate void PacmanDieSignal(Vector2 globalLoc);
     [Signal] public delegate void StartTimeLimitCountdown(float duration, World.Player playerType);
 
@@ -34,7 +34,7 @@ public class Pacman : Area2D
     private Vector2 parentOffset;
     private bool forwardAnimation = false;
 
-    private const int CellSize = 64, OutOfBoundDamage = 20, CatchRecoverHealth = 20, CatchRecoverBullet = 5;
+    private const int CellSize = 64, OutOfBoundDamage = 40, CatchRecoverHealth = 20, CatchRecoverBullet = 5;
     private float accumGridTime = 0, movPixelTime;
     private string playerStrPrefix;
 
@@ -242,7 +242,7 @@ public class Pacman : Area2D
             World.Player2Stat[curPlayer].bulletCount += point.bulletRestorePoint;
             World.Player2Stat[curPlayer].pacmanSpeed += point.speedRestorePoint;
             point.Destroy();
-            EmitSignal(nameof(CollectedPoint));
+            EmitSignal(nameof(CollectedPoint), false);
         }
         else if (node.IsInGroup("pacmanEnemy"))
         {
@@ -297,7 +297,7 @@ public class Pacman : Area2D
         }
         else if (node.IsInGroup("pacmanPowerup"))
         {
-            EmitSignal(nameof(CollectedPoint));
+            EmitSignal(nameof(CollectedPoint), true);
             ((PacmanPowerup) node).InteractPowerUp();
             ((PacmanPowerup) node).Destroy();
         }
@@ -334,11 +334,15 @@ public class Pacman : Area2D
             case PacmanState.Still:
                 curState = PacmanState.FlyingToGrid;
                 EmitSignal(nameof(StartTimeLimitCountdown), InGridMaxTime, curPlayer);
+                World.Player2Stat[curPlayer].health -= 20;
+                World.Player2Stat[curPlayer].bulletCount -= 10;
                 EmitSignal(nameof(BallLeave));
                 accumGridTime = 0;
                 break;
             case PacmanState.InGrid:
                 EmitSignal(nameof(StartTimeLimitCountdown), PinballMaxTime, curPlayer);
+                World.Player2Stat[curPlayer].health -= 60;
+                World.Player2Stat[curPlayer].bulletCount -= 20;
                 PacmanDie();
                 break;
         }

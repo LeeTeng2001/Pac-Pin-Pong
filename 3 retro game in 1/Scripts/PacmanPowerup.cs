@@ -6,11 +6,9 @@ public class PacmanPowerup : Area2D
 {
     public enum PowerUpType {Eat, Invisible, Kill, QuestionMark}
 
-
     private static readonly Random MyRandom = new Random();
     private static readonly Array PowValues = Enum.GetValues(typeof(PowerUpType));
     
-    private AnimatedSprite _sprite;
     private PowerUpType type;
     private bool _isSpawn = true;
 
