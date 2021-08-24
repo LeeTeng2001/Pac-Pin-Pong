@@ -36,7 +36,7 @@ public class Ghost : Area2D
         effectTimer = GetNode<Timer>("EffectTimer");
         animPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         ghostSprite = GetNode<AnimatedSprite>("RotationPivot/GhostSprite");
-        
+
         Start();
     }
 

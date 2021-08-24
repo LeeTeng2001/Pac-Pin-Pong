@@ -28,15 +28,10 @@ public class World : Node2D
 
         GetTree().Paused = true;  // pause the game
         AudioServer.SetBusVolumeDb(AudioServer.GetBusIndex("Master"), 0);  // Reset volume
-        
-        // Reset static stat when restart scene
-        Ghost.contactDamage = 30; Ghost.movSpeed = 210; Ghost.totalGhost = 0;
-        Pacman.InGridMaxTime = 6f; Pacman.PinballMaxTime = 5f;
     }
 
     private void _on_PlayerStat_PlayerDied(Player playerDied)
     {
-        // GD.Print("Gameover for ", playerDied);
         var whoWin = playerDied == Player.Left ? "Player2 win!" : "Player1 win!";
         mainMenu.ShowOverlay(whoWin);
     }
@@ -49,7 +44,7 @@ public class World : Node2D
         Player2Stat[Player.Right].IncreaseDifficulty();
         GetNode<PacmanMap1>("PacmanMap1").IncreaseDifficulty();
         Ghost.IncreaseDifficulty();
-        Pacman.InGridMaxTime -= 0.3f;
+        Pacman.InGridMaxTime -= 0.2f;
         Pacman.PinballMaxTime -= 0.4f;
     }
 }

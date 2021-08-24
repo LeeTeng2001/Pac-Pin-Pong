@@ -152,11 +152,11 @@ Because of the codesign issue on Mac, I recommend you to download the whole proj
 
 I will refer left hand side player as player 1 and vice versa
 
-Each player have two shoot buttons, one of them shoot the Space Invader bullet, the other shoot the Pacman towards the grid. In addition, there's also two set of movement key for each player, one of them controls the Pacman during his journey in the grid and the other controls the pinball pad movement.
+Each player have two shoot buttons, one of them shoots the Space Invader bullet, the other shoots the Pacman towards the grid. In addition, there's also two sets of movement keys for each player, one of them controls the Pacman during his journey in the grid and the other controls the pinball pad movement.
 
-The goal is to survive longer than the other player, every time you failed to catch the Pacman, run out of action time, colliding with ghost without a buff, colliding with bullets and other will deplete your health. You can also collect the point inside the Pacman grid to restore your health and bullets, successfully catch Pacman from other player also restore healths and bullets. At the same time, the Pacman points will make your Pacman moves faster which means it'll become really hard to control as time progress.
+The goal is to survive longer than the other player, every time you failed to catch the Pacman, run out of action time, collide with ghost without a buff, collide with bullets and etc. will deplete your health. You can also collect the points inside the Pacman grid to restore your health and bullets, successfully catching Pacman from the other player also restores health and bullets. At the same time, the Pacman points will make your Pacman moves faster which means it'll become really hard to control as time progresses.
 
-Everytime the game difficulty increase, the music will become more intense and there's a VFX indicating so along with a Pacman map refresh. There's also powerup inside the grid that will either kill a random ghost, make them invisible, make you strong enough to eat them or a random effect.
+Every time the game difficulty increases, the music will become more intense, as indicated by the VFX along with a Pacman map refresh. There's also powerup inside the grid that will either kill a random ghost, make them invisible, make you strong enough to eat them or a random effect.
 
 It's best to experience it yourself! I have a blast playing this game with my friend.
 
