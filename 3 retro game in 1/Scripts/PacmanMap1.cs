@@ -321,7 +321,7 @@ public class PacmanMap1 : Node2D
         foreach (PacmanPowerup powerInstance in GetTree().GetNodesInGroup("pacmanPowerup")) powerInstance.Destroy();
         
         // generate new stuff
-        GenerateEnemy(2);
+        GenerateEnemy(1);
         GeneratePointsAndPU();
     }
 
@@ -332,7 +332,7 @@ public class PacmanMap1 : Node2D
 
     private void _on_AddDeadTimer_timeout()
     {
-        GenerateEnemy(2);
+        GenerateEnemy(1);
     }
 
     private void _on_PlayerStat_PlayerDied(World.Player playerDied)

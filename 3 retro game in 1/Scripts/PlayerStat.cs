@@ -41,7 +41,7 @@ public class PlayerStat : Node2D
 
     public int pinBallSpeed, pacmanSpeed;
 
-    public const int InitHealth = 110, InitBulletCount = 14, InitPlayerFireRateInMS = 750, InitPinBallSpeed = 400;
+    public const int InitHealth = 110, InitBulletCount = 14, InitPlayerFireRateInMS = 650, InitPinBallSpeed = 400;
     public const int InitPacmanSpeed = 400;
 
     private int _health, _bulletCount, _fireRateInMS;
@@ -58,8 +58,8 @@ public class PlayerStat : Node2D
     public void IncreaseDifficulty()
     {
         // GD.Print("Player difficulty increase");
-        pinBallSpeed += 80;
-        pacmanSpeed += 60;
-        fireRateInMS -= 100;
+        pinBallSpeed += 50;
+        pacmanSpeed += 50;
+        fireRateInMS -= 80;
     }
 }

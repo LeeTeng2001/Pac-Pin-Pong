@@ -8,9 +8,9 @@ public class AudioManager : Node2D
     
     private static readonly Dictionary<int, int> LevelLoopCount = new Dictionary<int, int>
     {
-        {1 , 4},
-        {2 , 5},
-        {3 , 5},
+        {1 , 8},
+        {2 , 8},
+        {3 , 6},
         {4 , 6},
         {5 , 100000},  // The last one need to be very long
     };

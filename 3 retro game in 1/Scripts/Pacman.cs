@@ -14,7 +14,7 @@ public class Pacman : Area2D
     };
 
     public World.Player curPlayer = World.Player.Left;
-    public static float InGridMaxTime = 6f, PinballMaxTime = 5f;
+    public static float InGridMaxTime = 7.5f, PinballMaxTime = 6f;
     
     [Signal] public delegate void BallLeave();
     [Signal] public delegate void CollectedPoint(bool isPowerUp);
@@ -50,7 +50,7 @@ public class Pacman : Area2D
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true); // cause start in pinball
         
         // Reset static stat when restart scene
-        InGridMaxTime = 6f; PinballMaxTime = 5f;
+        InGridMaxTime = 7.5f; PinballMaxTime = 6f;
     }
 
     public override void _Process(float delta)

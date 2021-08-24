@@ -44,7 +44,7 @@ public class World : Node2D
         Player2Stat[Player.Right].IncreaseDifficulty();
         GetNode<PacmanMap1>("PacmanMap1").IncreaseDifficulty();
         Ghost.IncreaseDifficulty();
-        Pacman.InGridMaxTime -= 0.3f;
+        Pacman.InGridMaxTime -= 0.2f;
         Pacman.PinballMaxTime -= 0.4f;
     }
 }
